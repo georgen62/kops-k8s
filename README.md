@@ -55,6 +55,20 @@
 ```
 ## 5) Create an IAM role from AWS Console or CLI with the below Policies. 
 
+    go to https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Instances:instanceState=running
+    click on services
+    click on IAM and select role.
+    click create role
+    Under "Trusted entity type" allow the default which AWs services
+    Under service and use case. select "EC2 and click next
+    under Add permissions check the " AdministratorAccess" box to give full access and click next
+    Under " Name, review, and create, give a name to the role and click "create role"
+
+    To attach the role to an EC2 instance, click on services -----> EC2 -----> Instances (running) and check the instance box.
+    click on action -----> security ---->modify IAM role and clickon the drop arrow to select the role to attach to the instance and click update IAM role
+    
+    
+
 	AmazonEC2FullAccess 
 	AmazonS3FullAccess
 	IAMFullAccess 
@@ -62,6 +76,7 @@
 
 Then Attach IAM role to ubuntu server from Console Select KOPS Server --> Actions --> Instance Settings --> Attach/Replace IAM Role --> Select the role which
 You Created. --> Save.
+
 
 ## 6) create an S3 bucket
 ## Execute the commands below in your KOPS control Server. use unique s3 bucket name. If you get bucket name exists error.
